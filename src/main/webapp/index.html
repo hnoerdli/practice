@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Html Title</title>
+
+</head>
+<body>
+  <h1>Card Application</h1>
+  <button type="button" onclick="reset()">reset</button>
+  <button type="button" onclick="dealCard()">Deal A Card</button>
+  <div>
+    <ol id="hand">
+    </ol>
+  </div>
+  
+  <div>
+     <h1>Test 'data connect' SOAP</h1>
+     <form id='dc'>
+       <input type='text' id='ip'/>
+       <button type="button" onclick="sendIt()">sendIt</button>
+       <div id='youGetWhatYouNeed'></div>
+     </form>
+
+  </div>
+  <script>
+  
+  function sendIt() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+        var hand = document.getElementById("youGetWhatYouNeed");
+        hand.innerHTML = this.responseText;
+        }
+      };
+      var ticker = document.getElementById("ip").value;
+      xhttp.open("POST", document.location.pathname + "GeneralServlet/sendit?ticker=" + ticker, true);
+      xhttp.send();
+  }
+  
+  function reset() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+
+	    var hand = document.getElementById("hand");
+	    while (hand.firstChild) {
+	    	hand.removeChild(hand.firstChild);
+	    }
+	   //  window.alert("ready to deal");
+	     
+	    }
+	  };
+	  xhttp.open("GET", document.location.pathname + "GeneralServlet?shuffle=true", true);
+	  xhttp.send();
+  }
+  
+  function dealCard() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200 && this.responseText.length > 0) {
+	     var hand = document.getElementById("hand");
+	     var card = document.createElement("li");
+// 	     hand.appendChild(document.createTextNode(this.responseText));
+  		 card.innerHTML = this.responseText;
+	     hand.appendChild(card);
+	    }
+	  };
+	  xhttp.open("GET", document.location.pathname + "/GeneralServlet?deal=true", true);
+	  xhttp.send();
+  }
+  
+  
+</script>
+
+</body>
+</html>

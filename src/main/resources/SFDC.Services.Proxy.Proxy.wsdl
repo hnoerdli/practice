@@ -1,0 +1,1556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="Proxy" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:types>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Sale"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ContractInfo"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.MultiPriceService"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.SinglePriceService"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy"/>
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ItemSearchService"/>
+<xs:element name="GetEnvironment">
+<xs:complexType>
+<xs:sequence/>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetEnvironmentResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetEnvironmentResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAppSetting">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAppSettingResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetAppSettingResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetConnectionString">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetConnectionStringResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetConnectionStringResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetWebServiceURL">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetWebServiceURLResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetWebServiceURLResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetSalesHistory">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="customers" nillable="true" type="q1:ArrayOfstring" xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:element minOccurs="0" name="products" nillable="true" type="q2:ArrayOfstring" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="pricingContractId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="salesOrg" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="repType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetSalesHistoryResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetSalesHistoryResult" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetSalesHistoryProductDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="customers" nillable="true" type="q3:ArrayOfstring" xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:element minOccurs="0" name="products" nillable="true" type="q4:ArrayOfstring" xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="pricingContractId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="salesOrg" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="repType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetSalesHistoryProductDetailsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetSalesHistoryProductDetailsResult" nillable="true" type="q5:ArrayOfHistoryItem" xmlns:q5="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Sale"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetDistributorClassOfTrades">
+<xs:complexType>
+<xs:sequence/>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetDistributorClassOfTradesResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetDistributorClassOfTradesResult" nillable="true" type="q6:ArrayOfstring" xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetTerritoryManagerTerritory">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="customerId" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetTerritoryManagerTerritoryResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetTerritoryManagerTerritoryResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ContractInfo">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true" type="q7:ContractInfoRequestType" xmlns:q7="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ContractInfo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ContractInfoResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="ContractInfoResult" nillable="true" type="q8:ContractInfoResponseType" xmlns:q8="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ContractInfo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ValidationCheck">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="config" nillable="true" type="q9:CSLServiceInstruction" xmlns:q9="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+<xs:element minOccurs="0" name="request" nillable="true" type="q10:Request" xmlns:q10="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ValidationCheckResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="ValidationCheckResult" nillable="true" type="q11:Response" xmlns:q11="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="PartnerQueue">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="config" nillable="true" type="q12:CSLServiceInstruction" xmlns:q12="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+<xs:element minOccurs="0" name="request" nillable="true" type="q13:Request1" xmlns:q13="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="PartnerQueueResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="PartnerQueueResult" nillable="true" type="q14:Response1" xmlns:q14="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RecallDeal">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="config" nillable="true" type="q15:CSLServiceInstruction" xmlns:q15="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+<xs:element minOccurs="0" name="request" nillable="true" type="q16:Request2" xmlns:q16="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RecallDealResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="RecallDealResult" nillable="true" type="q17:Response2" xmlns:q17="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="MultiPrice">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true" type="q18:PricingRequestType" xmlns:q18="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.MultiPriceService"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="MultiPriceResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="MultiPriceResult" nillable="true" type="q19:PricingRespType" xmlns:q19="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.MultiPriceService"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SinglePrice">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true" type="q20:SP_RequestType" xmlns:q20="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.SinglePriceService"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SinglePriceResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="SinglePriceResult" nillable="true" type="q21:SP_ResponseType" xmlns:q21="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.SinglePriceService"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetContractEligibilityByRoot">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="rootContract" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="startsWith" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetContractEligibilityByRootResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetContractEligibilityByRootResult" nillable="true" type="q22:Proxy.CustomerWrapper" xmlns:q22="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="notifications">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="notifications1" nillable="true" type="q23:notifications0" xmlns:q23="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="notificationsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="notificationsResult" nillable="true" type="q24:notificationsResponse0" xmlns:q24="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="delay">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="millisecondsTimeout" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="delayResponse">
+<xs:complexType>
+<xs:sequence/>
+</xs:complexType>
+</xs:element>
+<xs:element name="ItemSearch">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="request" nillable="true" type="q25:ItemSearchRequestType" xmlns:q25="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ItemSearchService"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ItemSearchResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="ItemSearchResult" nillable="true" type="q26:ItemSearchResponseType" xmlns:q26="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ItemSearchService"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+<xs:element name="anyType" nillable="true" type="xs:anyType"/>
+<xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+<xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+<xs:element name="boolean" nillable="true" type="xs:boolean"/>
+<xs:element name="byte" nillable="true" type="xs:byte"/>
+<xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+<xs:element name="decimal" nillable="true" type="xs:decimal"/>
+<xs:element name="double" nillable="true" type="xs:double"/>
+<xs:element name="float" nillable="true" type="xs:float"/>
+<xs:element name="int" nillable="true" type="xs:int"/>
+<xs:element name="long" nillable="true" type="xs:long"/>
+<xs:element name="QName" nillable="true" type="xs:QName"/>
+<xs:element name="short" nillable="true" type="xs:short"/>
+<xs:element name="string" nillable="true" type="xs:string"/>
+<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+<xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+<xs:element name="char" nillable="true" type="tns:char"/>
+<xs:simpleType name="char">
+<xs:restriction base="xs:int"/>
+</xs:simpleType>
+<xs:element name="duration" nillable="true" type="tns:duration"/>
+<xs:simpleType name="duration">
+<xs:restriction base="xs:duration">
+<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+<xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+<xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="guid" nillable="true" type="tns:guid"/>
+<xs:simpleType name="guid">
+<xs:restriction base="xs:string">
+<xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:attribute name="FactoryType" type="xs:QName"/>
+<xs:attribute name="Id" type="xs:ID"/>
+<xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+<xs:complexType name="ArrayOfstring">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Sale" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Sale">
+<xs:complexType name="ArrayOfHistoryItem">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryItem" nillable="true" type="tns:HistoryItem"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfHistoryItem" nillable="true" type="tns:ArrayOfHistoryItem"/>
+<xs:complexType name="HistoryItem">
+<xs:sequence>
+<xs:element minOccurs="0" name="Discounts" type="xs:decimal"/>
+<xs:element minOccurs="0" name="GPOAdminFees" type="xs:decimal"/>
+<xs:element minOccurs="0" name="GrossASP" type="xs:decimal"/>
+<xs:element minOccurs="0" name="LongItemNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Quantity" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="HistoryItem" nillable="true" type="tns:HistoryItem"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ContractInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ContractInfo">
+<xs:complexType name="ContractInfoRequestType">
+<xs:sequence>
+<xs:element name="contractNumberField" nillable="true" type="xs:string"/>
+<xs:element name="getContractItemsField" type="xs:boolean"/>
+<xs:element name="getDealerServiceField" type="xs:boolean"/>
+<xs:element name="identityTokenField" nillable="true" type="xs:string"/>
+<xs:element name="maximumResponseRecordsField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContractInfoRequestType" nillable="true" type="tns:ContractInfoRequestType"/>
+<xs:complexType name="ContractInfoResponseType">
+<xs:sequence>
+<xs:element name="contractInfoField" nillable="true" type="tns:ContractInfoType"/>
+<xs:element name="dealersField" nillable="true" type="tns:ArrayOfContractDealerType"/>
+<xs:element name="errorCodeField" nillable="true" type="xs:string"/>
+<xs:element name="errorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="itemsField" nillable="true" type="tns:ArrayOfContractItemType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContractInfoResponseType" nillable="true" type="tns:ContractInfoResponseType"/>
+<xs:complexType name="ContractInfoType">
+<xs:sequence>
+<xs:element name="acquisitionCodeField" nillable="true" type="xs:string"/>
+<xs:element name="agreementNumberField" nillable="true" type="xs:string"/>
+<xs:element name="alternateSiteField" nillable="true" type="xs:string"/>
+<xs:element name="commitmentFormRequiredField" nillable="true" type="xs:string"/>
+<xs:element name="commitmentTypeField" nillable="true" type="xs:string"/>
+<xs:element name="companyField" nillable="true" type="xs:string"/>
+<xs:element name="contactField" nillable="true" type="xs:string"/>
+<xs:element name="corporateContractField" nillable="true" type="xs:string"/>
+<xs:element name="currencyCodeField" nillable="true" type="xs:string"/>
+<xs:element name="dateCreatedField" nillable="true" type="xs:dateTime"/>
+<xs:element name="divisionField" nillable="true" type="xs:string"/>
+<xs:element name="downloadDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="effectiveDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="expirationDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="groupCodeField" nillable="true" type="xs:string"/>
+<xs:element name="lastMaintenanceDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="lastMaintenanceUserField" nillable="true" type="xs:string"/>
+<xs:element name="levelField" type="xs:int"/>
+<xs:element name="lineOfBusinessField" nillable="true" type="xs:string"/>
+<xs:element name="nameField" nillable="true" type="xs:string"/>
+<xs:element name="nextContractField" nillable="true" type="xs:string"/>
+<xs:element name="originalEndDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="pricingGroupField" nillable="true" type="xs:string"/>
+<xs:element name="pricingIdField" nillable="true" type="xs:string"/>
+<xs:element name="priorContractField" nillable="true" type="xs:string"/>
+<xs:element name="renewableFlagField" nillable="true" type="xs:string"/>
+<xs:element name="restrictDealerServiceField" nillable="true" type="xs:string"/>
+<xs:element name="rootContractField" nillable="true" type="xs:string"/>
+<xs:element name="statusField" nillable="true" type="xs:string"/>
+<xs:element name="territoryField" nillable="true" type="xs:string"/>
+<xs:element name="tierGroupField" nillable="true" type="xs:string"/>
+<xs:element name="typeField" nillable="true" type="xs:string"/>
+<xs:element name="uploadDateField" nillable="true" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContractInfoType" nillable="true" type="tns:ContractInfoType"/>
+<xs:complexType name="ArrayOfContractDealerType">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ContractDealerType" nillable="true" type="tns:ContractDealerType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfContractDealerType" nillable="true" type="tns:ArrayOfContractDealerType"/>
+<xs:complexType name="ContractDealerType">
+<xs:sequence>
+<xs:element name="billToField" type="xs:int"/>
+<xs:element name="cityField" nillable="true" type="xs:string"/>
+<xs:element name="effectiveDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="expirationDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="nameField" nillable="true" type="xs:string"/>
+<xs:element name="shipToField" type="xs:int"/>
+<xs:element name="stateField" nillable="true" type="xs:string"/>
+<xs:element name="zipCodeField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContractDealerType" nillable="true" type="tns:ContractDealerType"/>
+<xs:complexType name="ArrayOfContractItemType">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ContractItemType" nillable="true" type="tns:ContractItemType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfContractItemType" nillable="true" type="tns:ArrayOfContractItemType"/>
+<xs:complexType name="ContractItemType">
+<xs:sequence>
+<xs:element name="alternateUOMCaseQuantityField" type="xs:int"/>
+<xs:element name="alternateUOMField" nillable="true" type="xs:string"/>
+<xs:element name="dealerNetField" nillable="true" type="xs:decimal"/>
+<xs:element name="directPriceField" nillable="true" type="xs:decimal"/>
+<xs:element name="effectiveDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="expirationDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="itemDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="itemNumberField" nillable="true" type="xs:string"/>
+<xs:element name="marginField" nillable="true" type="xs:decimal"/>
+<xs:element name="quantityBreakField" type="xs:int"/>
+<xs:element name="salesClassField" nillable="true" type="xs:string"/>
+<xs:element name="suggestedResaleField" nillable="true" type="xs:decimal"/>
+<xs:element name="unitOfMeasureField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContractItemType" nillable="true" type="tns:ContractItemType"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.iDealServiceBroker">
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xs:complexType name="CSLServiceInstruction">
+<xs:sequence>
+<xs:element name="contextTypeNameField" nillable="true" type="xs:string"/>
+<xs:element name="contextValuesField" nillable="true" type="tns:ArrayOfDictionaryEntry"/>
+<xs:element name="loggingTypeNameField" nillable="true" type="xs:string"/>
+<xs:element name="notificationTypeNameField" nillable="true" type="xs:string"/>
+<xs:element name="notificationValuesField" nillable="true" type="tns:ArrayOfDictionaryEntry"/>
+<xs:element name="paramsField" nillable="true" type="tns:ArrayOfDictionaryEntry"/>
+<xs:element name="systemNameField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CSLServiceInstruction" nillable="true" type="tns:CSLServiceInstruction"/>
+<xs:complexType name="ArrayOfDictionaryEntry">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="DictionaryEntry" nillable="true" type="tns:DictionaryEntry"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDictionaryEntry" nillable="true" type="tns:ArrayOfDictionaryEntry"/>
+<xs:complexType name="DictionaryEntry">
+<xs:sequence>
+<xs:element name="keyField" nillable="true" type="xs:anyType"/>
+<xs:element name="valueField" nillable="true" type="xs:anyType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DictionaryEntry" nillable="true" type="tns:DictionaryEntry"/>
+<xs:complexType name="Request">
+<xs:sequence>
+<xs:element name="affiliationsField" nillable="true" type="tns:ArrayOfAffiliation"/>
+<xs:element name="applicationNameField" nillable="true" type="xs:string"/>
+<xs:element name="customersField" nillable="true" type="tns:ArrayOfCustomer"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="dealersField" nillable="true" type="tns:ArrayOfDealer"/>
+<xs:element name="headerField" nillable="true" type="tns:Header"/>
+<xs:element name="itemsField" nillable="true" type="tns:ArrayOfItem"/>
+<xs:element name="procedureField" nillable="true" type="xs:string"/>
+<xs:element name="processEventField" nillable="true" type="xs:string"/>
+<xs:element name="requestTypeField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Request" nillable="true" type="tns:Request"/>
+<xs:complexType name="ArrayOfAffiliation">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Affiliation" nillable="true" type="tns:Affiliation"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAffiliation" nillable="true" type="tns:ArrayOfAffiliation"/>
+<xs:complexType name="Affiliation">
+<xs:sequence>
+<xs:element name="billToNumberField" nillable="true" type="xs:string"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="groupCodeField" nillable="true" type="xs:string"/>
+<xs:element name="pricingRequestIdField" type="xs:int"/>
+<xs:element name="productCenterCodeField" nillable="true" type="xs:string"/>
+<xs:element name="versionIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Affiliation" nillable="true" type="tns:Affiliation"/>
+<xs:complexType name="ArrayOfCustomer">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer"/>
+<xs:complexType name="Customer">
+<xs:sequence>
+<xs:element name="addChgExpFlagField" nillable="true" type="xs:string"/>
+<xs:element name="customerNumberField" nillable="true" type="xs:string"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="eligibilityTypeField" nillable="true" type="xs:string"/>
+<xs:element name="groupField" nillable="true" type="xs:string"/>
+<xs:element name="pricingRequestIdField" type="xs:int"/>
+<xs:element name="versionIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Customer" nillable="true" type="tns:Customer"/>
+<xs:complexType name="ArrayOfDealer">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Dealer" nillable="true" type="tns:Dealer"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDealer" nillable="true" type="tns:ArrayOfDealer"/>
+<xs:complexType name="Dealer">
+<xs:sequence>
+<xs:element name="addChgExpFlagField" nillable="true" type="xs:string"/>
+<xs:element name="customerNumberField" nillable="true" type="xs:string"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="groupField" nillable="true" type="xs:string"/>
+<xs:element name="pricingRequestIdField" type="xs:int"/>
+<xs:element name="versionIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Dealer" nillable="true" type="tns:Dealer"/>
+<xs:complexType name="Header">
+<xs:sequence>
+<xs:element name="adjustedContractNumberField" nillable="true" type="xs:string"/>
+<xs:element name="bidDateField" type="xs:dateTime"/>
+<xs:element name="bidNumberField" nillable="true" type="xs:string"/>
+<xs:element name="bidPersonField" nillable="true" type="xs:string"/>
+<xs:element name="commitmentTypeField" nillable="true" type="xs:string"/>
+<xs:element name="contactNameField" nillable="true" type="xs:string"/>
+<xs:element name="contractDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="contractNameField" nillable="true" type="xs:string"/>
+<xs:element name="contractNumberField" nillable="true" type="xs:string"/>
+<xs:element name="contractTypeField" nillable="true" type="xs:string"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="effectiveDateField" type="xs:dateTime"/>
+<xs:element name="endUserAgreementNumberField" nillable="true" type="xs:string"/>
+<xs:element name="expirationDateField" type="xs:dateTime"/>
+<xs:element name="groupCodeField" nillable="true" type="xs:string"/>
+<xs:element name="groupTypeField" nillable="true" type="xs:string"/>
+<xs:element name="iSeriesUserIdField" nillable="true" type="xs:string"/>
+<xs:element name="increaseMethodField" nillable="true" type="xs:string"/>
+<xs:element name="leaseFlagField" nillable="true" type="xs:string"/>
+<xs:element name="lineOfBusinessField" nillable="true" type="xs:string"/>
+<xs:element name="notesField" nillable="true" type="xs:string"/>
+<xs:element name="pricingRequestIdField" type="xs:int"/>
+<xs:element name="pricingTypeField" nillable="true" type="xs:string"/>
+<xs:element name="priorContractNumberField" nillable="true" type="xs:string"/>
+<xs:element name="priorRootContractField" nillable="true" type="xs:string"/>
+<xs:element name="regionFlagField" nillable="true" type="xs:string"/>
+<xs:element name="renewalFlagField" nillable="true" type="xs:string"/>
+<xs:element name="rootContractField" nillable="true" type="xs:string"/>
+<xs:element name="sMGuidelinesCodeField" nillable="true" type="xs:string"/>
+<xs:element name="tierGroupField" nillable="true" type="xs:string"/>
+<xs:element name="versionIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Header" nillable="true" type="tns:Header"/>
+<xs:complexType name="ArrayOfItem">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfItem" nillable="true" type="tns:ArrayOfItem"/>
+<xs:complexType name="Item">
+<xs:sequence>
+<xs:element name="addChgExpFlagField" nillable="true" type="xs:string"/>
+<xs:element name="approvedPriceField" type="xs:decimal"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="dealerMarginPercentField" type="xs:decimal"/>
+<xs:element name="fromQtyBreakField" type="xs:int"/>
+<xs:element name="isItemTieredField" nillable="true" type="xs:string"/>
+<xs:element name="itemCodeField" nillable="true" type="xs:string"/>
+<xs:element name="previousPriceField" type="xs:decimal"/>
+<xs:element name="previousVolumeField" type="xs:int"/>
+<xs:element name="pricingRequestIdField" type="xs:int"/>
+<xs:element name="projectedVolumeField" type="xs:int"/>
+<xs:element name="quantityBreakField" type="xs:int"/>
+<xs:element name="requestedPriceField" type="xs:decimal"/>
+<xs:element name="suggestedResalePriceField" type="xs:decimal"/>
+<xs:element name="versionIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Item" nillable="true" type="tns:Item"/>
+<xs:complexType name="Response">
+<xs:sequence>
+<xs:element name="affiliationsField" nillable="true" type="tns:ArrayOfAffiliation"/>
+<xs:element name="auditsField" nillable="true" type="tns:ArrayOfAudit"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Response" nillable="true" type="tns:Response"/>
+<xs:complexType name="ArrayOfAudit">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Audit" nillable="true" type="tns:Audit"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAudit" nillable="true" type="tns:ArrayOfAudit"/>
+<xs:complexType name="Audit">
+<xs:sequence>
+<xs:element name="auditAreaField" nillable="true" type="xs:string"/>
+<xs:element name="auditIdField" type="xs:int"/>
+<xs:element name="auditIndicator1Field" nillable="true" type="xs:string"/>
+<xs:element name="auditIndicator2Field" nillable="true" type="xs:string"/>
+<xs:element name="auditIndicator3Field" nillable="true" type="xs:string"/>
+<xs:element name="auditIndicator4Field" nillable="true" type="xs:string"/>
+<xs:element name="auditIndicator5Field" nillable="true" type="xs:string"/>
+<xs:element name="auditSequenceNumberField" type="xs:int"/>
+<xs:element name="auditSeverityField" type="xs:byte"/>
+<xs:element name="commitmentTypeField" nillable="true" type="xs:string"/>
+<xs:element name="conflictContractCommitmentTypeField" nillable="true" type="xs:string"/>
+<xs:element name="conflictContractEffectiveDateField" type="xs:dateTime"/>
+<xs:element name="conflictContractExpirationDateField" type="xs:dateTime"/>
+<xs:element name="conflictContractField" nillable="true" type="xs:string"/>
+<xs:element name="conflictContractGroupField" nillable="true" type="xs:string"/>
+<xs:element name="conflictContractNameField" nillable="true" type="xs:string"/>
+<xs:element name="conflictContractPriceField" type="xs:decimal"/>
+<xs:element name="conflictContractTypeField" nillable="true" type="xs:string"/>
+<xs:element name="contractNameField" nillable="true" type="xs:string"/>
+<xs:element name="customerNumberField" nillable="true" type="xs:string"/>
+<xs:element name="dateTimeStampField" type="xs:dateTime"/>
+<xs:element name="effectiveDateField" type="xs:dateTime"/>
+<xs:element name="expirationDateField" type="xs:dateTime"/>
+<xs:element name="groupCodeField" nillable="true" type="xs:string"/>
+<xs:element name="groupSalesClassField" nillable="true" type="xs:string"/>
+<xs:element name="groupTypeField" nillable="true" type="xs:string"/>
+<xs:element name="headerAuditIdField" type="xs:int"/>
+<xs:element name="itemCodeField" nillable="true" type="xs:string"/>
+<xs:element name="messageField" nillable="true" type="xs:string"/>
+<xs:element name="pricingRequestIdField" type="xs:int"/>
+<xs:element name="processingDateField" type="xs:dateTime"/>
+<xs:element name="quantityBreakField" type="xs:int"/>
+<xs:element name="requestedPriceField" type="xs:decimal"/>
+<xs:element name="sMGuidelinesCodeField" nillable="true" type="xs:string"/>
+<xs:element name="sMGuidelinesDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="salesClassField" nillable="true" type="xs:string"/>
+<xs:element name="shipToField" nillable="true" type="xs:string"/>
+<xs:element name="superGroupField" nillable="true" type="xs:string"/>
+<xs:element name="versionIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Audit" nillable="true" type="tns:Audit"/>
+<xs:complexType name="Request1">
+<xs:sequence>
+<xs:element name="mementoField" nillable="true" type="tns:Memento"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Request1" nillable="true" type="tns:Request1"/>
+<xs:complexType name="Memento">
+<xs:sequence>
+<xs:element name="complianceAmountsField" nillable="true" type="tns:ArrayOfComplianceAmount"/>
+<xs:element name="complianceLevelField" type="xs:decimal"/>
+<xs:element name="contractFlagField" type="xs:boolean"/>
+<xs:element name="contractTypeField" nillable="true" type="xs:string"/>
+<xs:element name="dealCodeField" nillable="true" type="xs:string"/>
+<xs:element name="dealIdField" type="xs:int"/>
+<xs:element name="dealTypeField" nillable="true" type="xs:string"/>
+<xs:element name="durationField" type="xs:int"/>
+<xs:element name="earliestEffectiveDateField" type="xs:dateTime"/>
+<xs:element name="effectiveDateField" type="xs:dateTime"/>
+<xs:element name="equipmentFlagField" type="xs:boolean"/>
+<xs:element name="equipmentTaskField" type="xs:int"/>
+<xs:element name="expirationDateField" type="xs:dateTime"/>
+<xs:element name="expiredFlagField" type="xs:boolean"/>
+<xs:element name="groupCodeField" nillable="true" type="xs:string"/>
+<xs:element name="nameField" nillable="true" type="xs:string"/>
+<xs:element name="nonStandardTaskField" type="xs:int"/>
+<xs:element name="nonStandardTermsField" type="xs:boolean"/>
+<xs:element name="nonStandardTermsTextField" nillable="true" type="xs:string"/>
+<xs:element name="nonStandardValueField" type="xs:boolean"/>
+<xs:element name="nonStandardValueTextField" nillable="true" type="xs:string"/>
+<xs:element name="partnerDistributorsField" nillable="true" type="tns:ArrayOfPartnerDistributor"/>
+<xs:element name="partnerItemsField" nillable="true" type="tns:ArrayOfPartnerItem"/>
+<xs:element name="partnerPristinesField" nillable="true" type="tns:ArrayOfPartnerPristine"/>
+<xs:element name="partnerProgramsField" nillable="true" type="tns:ArrayOfPartnerProgram"/>
+<xs:element name="partnerRebatesField" nillable="true" type="tns:ArrayOfPartnerRebate"/>
+<xs:element name="pricingFlagField" type="xs:boolean"/>
+<xs:element name="pricingTaskField" type="xs:int"/>
+<xs:element name="rebateFlagField" type="xs:boolean"/>
+<xs:element name="rebateFrequencyField" nillable="true" type="xs:string"/>
+<xs:element name="rebateTaskField" type="xs:int"/>
+<xs:element name="requestedEffectiveDateField" type="xs:dateTime"/>
+<xs:element name="rootContractNumberField" nillable="true" type="xs:string"/>
+<xs:element name="sLAOverrideFlagField" type="xs:boolean"/>
+<xs:element name="salesOrgField" nillable="true" type="xs:string"/>
+<xs:element name="salesPersonIdField" nillable="true" type="xs:string"/>
+<xs:element name="territoryNumberField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Memento" nillable="true" type="tns:Memento"/>
+<xs:complexType name="ArrayOfComplianceAmount">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ComplianceAmount" nillable="true" type="tns:ComplianceAmount"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfComplianceAmount" nillable="true" type="tns:ArrayOfComplianceAmount"/>
+<xs:complexType name="ComplianceAmount">
+<xs:sequence>
+<xs:element name="_AmountField0" type="xs:decimal"/>
+<xs:element name="_OriginalAmountField0" type="xs:decimal"/>
+<xs:element name="amountField" type="xs:decimal"/>
+<xs:element name="categoryField" nillable="true" type="xs:string"/>
+<xs:element name="changeTypeField" type="ser:char"/>
+<xs:element name="originalAmountField" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ComplianceAmount" nillable="true" type="tns:ComplianceAmount"/>
+<xs:complexType name="ArrayOfPartnerDistributor">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerDistributor" nillable="true" type="tns:PartnerDistributor"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPartnerDistributor" nillable="true" type="tns:ArrayOfPartnerDistributor"/>
+<xs:complexType name="PartnerDistributor">
+<xs:sequence>
+<xs:element name="changeTypeField" nillable="true" type="xs:string"/>
+<xs:element name="pristineField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PartnerDistributor" nillable="true" type="tns:PartnerDistributor"/>
+<xs:complexType name="ArrayOfPartnerItem">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerItem" nillable="true" type="tns:PartnerItem"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPartnerItem" nillable="true" type="tns:ArrayOfPartnerItem"/>
+<xs:complexType name="PartnerItem">
+<xs:sequence>
+<xs:element name="achieveField" type="xs:boolean"/>
+<xs:element name="changeTypeField" nillable="true" type="xs:string"/>
+<xs:element name="itemNumberField" nillable="true" type="xs:string"/>
+<xs:element name="payField" type="xs:boolean"/>
+<xs:element name="priceField" type="xs:decimal"/>
+<xs:element name="quantityField" type="xs:int"/>
+<xs:element name="unitOfMeasureConversionFactorField" type="xs:decimal"/>
+<xs:element name="unitOfMeasureField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PartnerItem" nillable="true" type="tns:PartnerItem"/>
+<xs:complexType name="ArrayOfPartnerPristine">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerPristine" nillable="true" type="tns:PartnerPristine"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPartnerPristine" nillable="true" type="tns:ArrayOfPartnerPristine"/>
+<xs:complexType name="PartnerPristine">
+<xs:sequence>
+<xs:element name="changeTypeField" nillable="true" type="xs:string"/>
+<xs:element name="pristineField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PartnerPristine" nillable="true" type="tns:PartnerPristine"/>
+<xs:complexType name="ArrayOfPartnerProgram">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerProgram" nillable="true" type="tns:PartnerProgram"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPartnerProgram" nillable="true" type="tns:ArrayOfPartnerProgram"/>
+<xs:complexType name="PartnerProgram">
+<xs:sequence>
+<xs:element name="changeTypeField" nillable="true" type="xs:string"/>
+<xs:element name="programDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="programNameField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PartnerProgram" nillable="true" type="tns:PartnerProgram"/>
+<xs:complexType name="ArrayOfPartnerRebate">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PartnerRebate" nillable="true" type="tns:PartnerRebate"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPartnerRebate" nillable="true" type="tns:ArrayOfPartnerRebate"/>
+<xs:complexType name="PartnerRebate">
+<xs:sequence>
+<xs:element name="achievementAmountField" type="xs:decimal"/>
+<xs:element name="changeTypeField" nillable="true" type="xs:string"/>
+<xs:element name="companyNumberField" type="xs:int"/>
+<xs:element name="corporateContractIDField" nillable="true" type="xs:string"/>
+<xs:element name="customerSetIDField" nillable="true" type="xs:string"/>
+<xs:element name="partnerItemsField" nillable="true" type="tns:ArrayOfPartnerItem"/>
+<xs:element name="partnerPristinesField" nillable="true" type="tns:ArrayOfPartnerPristine"/>
+<xs:element name="productSetIDField" nillable="true" type="xs:string"/>
+<xs:element name="rebatePaymentMethodField" nillable="true" type="xs:string"/>
+<xs:element name="rebatePercentField" type="xs:decimal"/>
+<xs:element name="rebateSequenceField" type="xs:int"/>
+<xs:element name="rebateTypeField" nillable="true" type="xs:string"/>
+<xs:element name="warehouseGroupingField" nillable="true" type="xs:string"/>
+<xs:element name="whoToPayField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PartnerRebate" nillable="true" type="tns:PartnerRebate"/>
+<xs:complexType name="Response1">
+<xs:sequence>
+<xs:element name="resultField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Response1" nillable="true" type="tns:Response1"/>
+<xs:complexType name="Request2">
+<xs:sequence>
+<xs:element name="dealIdField" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Request2" nillable="true" type="tns:Request2"/>
+<xs:complexType name="Response2">
+<xs:sequence>
+<xs:element name="dealRecalledField" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Response2" nillable="true" type="tns:Response2"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.MultiPriceService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.MultiPriceService">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:complexType name="PricingRequestType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="countryField" nillable="true" type="xs:string"/>
+<xs:element name="currencyField" nillable="true" type="xs:string"/>
+<xs:element name="designatorField" nillable="true" type="xs:string"/>
+<xs:element name="gBUField" nillable="true" type="xs:string"/>
+<xs:element name="requestDateField" type="xs:dateTime"/>
+<xs:element name="requestDateFieldSpecified" type="xs:boolean"/>
+<xs:element name="requestIDField" nillable="true" type="xs:string"/>
+<xs:element name="sKUsField" nillable="true" type="tns:ArrayOfSKUType"/>
+<xs:element name="shipToDSField" nillable="true" type="tns:ArrayOfShipTo"/>
+<xs:element name="showOnePriceField" nillable="true" type="xs:string"/>
+<xs:element name="userIDField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricingRequestType" nillable="true" type="tns:PricingRequestType"/>
+<xs:complexType name="ArrayOfSKUType">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SKUType" nillable="true" type="tns:SKUType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSKUType" nillable="true" type="tns:ArrayOfSKUType"/>
+<xs:complexType name="SKUType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="quantityField" type="xs:decimal"/>
+<xs:element name="quantityFieldSpecified" type="xs:boolean"/>
+<xs:element name="sKUCodeField" nillable="true" type="xs:string"/>
+<xs:element name="uOMField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SKUType" nillable="true" type="tns:SKUType"/>
+<xs:complexType name="ArrayOfShipTo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ShipTo" nillable="true" type="tns:ShipTo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfShipTo" nillable="true" type="tns:ArrayOfShipTo"/>
+<xs:complexType name="ShipTo">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="shipTo1Field" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ShipTo" nillable="true" type="tns:ShipTo"/>
+<xs:complexType name="PricingRespType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q4:PropertyChangedEventHandler" xmlns:q4="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="countryField" nillable="true" type="xs:string"/>
+<xs:element name="currencyField" nillable="true" type="xs:string"/>
+<xs:element name="designatorField" nillable="true" type="xs:string"/>
+<xs:element name="gBUField" nillable="true" type="xs:string"/>
+<xs:element name="requestDateField" type="xs:dateTime"/>
+<xs:element name="requestDateFieldSpecified" type="xs:boolean"/>
+<xs:element name="requestErrorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="requestErrorField" nillable="true" type="xs:string"/>
+<xs:element name="requestIDField" nillable="true" type="xs:string"/>
+<xs:element name="shipToDSField" nillable="true" type="tns:ArrayOfShipToResp"/>
+<xs:element name="showOnePriceField" nillable="true" type="xs:string"/>
+<xs:element name="userIDField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricingRespType" nillable="true" type="tns:PricingRespType"/>
+<xs:complexType name="ArrayOfShipToResp">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ShipToResp" nillable="true" type="tns:ShipToResp"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfShipToResp" nillable="true" type="tns:ArrayOfShipToResp"/>
+<xs:complexType name="ShipToResp">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q5:PropertyChangedEventHandler" xmlns:q5="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="billToField" nillable="true" type="xs:string"/>
+<xs:element name="sKUsField" nillable="true" type="tns:ArrayOfSKUTypeResp"/>
+<xs:element name="shipToErrorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="shipToErrorField" nillable="true" type="xs:string"/>
+<xs:element name="shipToField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ShipToResp" nillable="true" type="tns:ShipToResp"/>
+<xs:complexType name="ArrayOfSKUTypeResp">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SKUTypeResp" nillable="true" type="tns:SKUTypeResp"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSKUTypeResp" nillable="true" type="tns:ArrayOfSKUTypeResp"/>
+<xs:complexType name="SKUTypeResp">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q6:PropertyChangedEventHandler" xmlns:q6="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="pricesField" nillable="true" type="tns:ArrayOfPriceTypeResp"/>
+<xs:element name="quantityField" type="xs:decimal"/>
+<xs:element name="quantityFieldSpecified" type="xs:boolean"/>
+<xs:element name="sKUCodeField" nillable="true" type="xs:string"/>
+<xs:element name="sKUErrorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="sKUErrorField" nillable="true" type="xs:string"/>
+<xs:element name="salesClassField" nillable="true" type="xs:string"/>
+<xs:element name="uOMField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SKUTypeResp" nillable="true" type="tns:SKUTypeResp"/>
+<xs:complexType name="ArrayOfPriceTypeResp">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PriceTypeResp" nillable="true" type="tns:PriceTypeResp"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPriceTypeResp" nillable="true" type="tns:ArrayOfPriceTypeResp"/>
+<xs:complexType name="PriceTypeResp">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q7:PropertyChangedEventHandler" xmlns:q7="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="contractDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="contractDesignatorField" nillable="true" type="xs:string"/>
+<xs:element name="contractNumberField" nillable="true" type="xs:string"/>
+<xs:element name="currencyField" nillable="true" type="xs:string"/>
+<xs:element name="effectiveDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="endCustomerPriceField" nillable="true" type="xs:decimal"/>
+<xs:element name="endCustomerPriceFieldSpecified" type="xs:boolean"/>
+<xs:element name="expirationDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="gPONonCommittedPriceField" type="xs:decimal"/>
+<xs:element name="gPONonCommittedPriceFieldSpecified" type="xs:boolean"/>
+<xs:element name="gPOTierPriceField" type="xs:decimal"/>
+<xs:element name="gPOTierPriceFieldSpecified" type="xs:boolean"/>
+<xs:element name="gPOTierPriceRootContractField" nillable="true" type="xs:string"/>
+<xs:element name="markupField" nillable="true" type="xs:decimal"/>
+<xs:element name="markupFieldSpecified" type="xs:boolean"/>
+<xs:element name="pricContCommitmentTypeDescField" nillable="true" type="xs:string"/>
+<xs:element name="pricContRootContractField" nillable="true" type="xs:string"/>
+<xs:element name="priceErrorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="priceErrorField" nillable="true" type="xs:string"/>
+<xs:element name="quantityRangeField" nillable="true" type="xs:string"/>
+<xs:element name="sequenceNumberField" type="xs:int"/>
+<xs:element name="sequenceNumberFieldSpecified" type="xs:boolean"/>
+<xs:element name="unitPriceField" nillable="true" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PriceTypeResp" nillable="true" type="tns:PriceTypeResp"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/System.ComponentModel">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/System"/>
+<xs:complexType name="PropertyChangedEventHandler">
+<xs:complexContent mixed="false">
+<xs:extension base="q1:MulticastDelegate" xmlns:q1="http://schemas.datacontract.org/2004/07/System"/>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="PropertyChangedEventHandler" nillable="true" type="tns:PropertyChangedEventHandler"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System">
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xs:complexType name="MulticastDelegate">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:Delegate"/>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="MulticastDelegate" nillable="true" type="tns:MulticastDelegate"/>
+<xs:complexType name="Delegate">
+<xs:sequence>
+<xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip"/>
+</xs:sequence>
+<xs:attribute ref="ser:FactoryType"/>
+</xs:complexType>
+<xs:element name="Delegate" nillable="true" type="tns:Delegate"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.SinglePriceService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.SinglePriceService">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:complexType name="SP_RequestType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="contractTypeField" nillable="true" type="xs:string"/>
+<xs:element name="customerField" nillable="true" type="xs:decimal"/>
+<xs:element name="dateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="distributorField" nillable="true" type="xs:decimal"/>
+<xs:element name="gBUsField" nillable="true" type="xs:string"/>
+<xs:element name="identityTokenField" nillable="true" type="xs:string"/>
+<xs:element name="itemField" nillable="true" type="xs:string"/>
+<xs:element name="returnPricingTypeField" nillable="true" type="xs:string"/>
+<xs:element name="territoriesField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SP_RequestType" nillable="true" type="tns:SP_RequestType"/>
+<xs:complexType name="SP_ResponseType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="bill_toField" nillable="true" type="xs:decimal"/>
+<xs:element name="distributorField" nillable="true" type="xs:decimal"/>
+<xs:element name="errorCodeField" type="xs:int"/>
+<xs:element name="errorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="shipToField" nillable="true" type="tns:ArrayOfSP_ShipType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SP_ResponseType" nillable="true" type="tns:SP_ResponseType"/>
+<xs:complexType name="ArrayOfSP_ShipType">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SP_ShipType" nillable="true" type="tns:SP_ShipType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSP_ShipType" nillable="true" type="tns:ArrayOfSP_ShipType"/>
+<xs:complexType name="SP_ShipType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="addressField" nillable="true" type="xs:string"/>
+<xs:element name="billToField" nillable="true" type="xs:decimal"/>
+<xs:element name="cityField" nillable="true" type="xs:string"/>
+<xs:element name="nameField" nillable="true" type="xs:string"/>
+<xs:element name="ownershipField" type="xs:boolean"/>
+<xs:element name="priceField" nillable="true" type="tns:ArrayOfSP_PriceType"/>
+<xs:element name="ship_toNumberField" nillable="true" type="xs:decimal"/>
+<xs:element name="stateField" nillable="true" type="xs:string"/>
+<xs:element name="zIPField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SP_ShipType" nillable="true" type="tns:SP_ShipType"/>
+<xs:complexType name="ArrayOfSP_PriceType">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SP_PriceType" nillable="true" type="tns:SP_PriceType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSP_PriceType" nillable="true" type="tns:ArrayOfSP_PriceType"/>
+<xs:complexType name="SP_PriceType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q4:PropertyChangedEventHandler" xmlns:q4="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="contractField" nillable="true" type="xs:string"/>
+<xs:element name="contractTypeDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="contractTypeField" nillable="true" type="xs:string"/>
+<xs:element name="effectiveDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="expirationDateField" nillable="true" type="xs:dateTime"/>
+<xs:element name="itemField" nillable="true" type="xs:string"/>
+<xs:element name="priceValueField" type="xs:double"/>
+<xs:element name="pricingMethodField" nillable="true" type="xs:string"/>
+<xs:element name="pricingUOMField" nillable="true" type="xs:string"/>
+<xs:element name="primaryUOMField" nillable="true" type="xs:string"/>
+<xs:element name="quantityBreakField" nillable="true" type="xs:decimal"/>
+<xs:element name="salesRepDisplayNameField" nillable="true" type="xs:string"/>
+<xs:element name="territoryCodeField" nillable="true" type="xs:string"/>
+<xs:element name="uOMConversionFactorField" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SP_PriceType" nillable="true" type="tns:SP_PriceType"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Contract"/>
+<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:complexType name="Proxy.CustomerWrapper">
+<xs:sequence>
+<xs:element minOccurs="0" name="Customers" nillable="true" type="q1:ArrayOfInformation" xmlns:q1="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Contract"/>
+<xs:element minOccurs="0" name="TotalCount" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Proxy.CustomerWrapper" nillable="true" type="tns:Proxy.CustomerWrapper"/>
+<xs:complexType name="notifications0">
+<xs:sequence>
+<xs:element name="actionIdField" nillable="true" type="xs:string"/>
+<xs:element name="enterpriseUrlField" nillable="true" type="xs:string"/>
+<xs:element name="notificationField" nillable="true" type="tns:ArrayOfApttus__APTS_Agreement__cNotification"/>
+<xs:element name="organizationIdField" nillable="true" type="xs:string"/>
+<xs:element name="partnerUrlField" nillable="true" type="xs:string"/>
+<xs:element name="sessionIdField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="notifications2" nillable="true" type="tns:notifications0"/>
+<xs:complexType name="ArrayOfApttus__APTS_Agreement__cNotification">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Apttus__APTS_Agreement__cNotification" nillable="true" type="tns:Apttus__APTS_Agreement__cNotification"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfApttus__APTS_Agreement__cNotification" nillable="true" type="tns:ArrayOfApttus__APTS_Agreement__cNotification"/>
+<xs:complexType name="Apttus__APTS_Agreement__cNotification">
+<xs:sequence>
+<xs:element name="idField" nillable="true" type="xs:string"/>
+<xs:element name="sObjectField" nillable="true" type="tns:Apttus__APTS_Agreement__c"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Apttus__APTS_Agreement__cNotification" nillable="true" type="tns:Apttus__APTS_Agreement__cNotification"/>
+<xs:complexType name="Apttus__APTS_Agreement__c">
+<xs:complexContent mixed="false">
+<xs:extension base="tns:sObject">
+<xs:sequence>
+<xs:element name="nameField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:element name="Apttus__APTS_Agreement__c" nillable="true" type="tns:Apttus__APTS_Agreement__c"/>
+<xs:complexType name="sObject">
+<xs:sequence>
+<xs:element name="fieldsToNullField" nillable="true" type="q2:ArrayOfstring" xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:element name="idField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="sObject" nillable="true" type="tns:sObject"/>
+<xs:complexType name="notificationsResponse0">
+<xs:sequence>
+<xs:element name="ackField" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="notificationsResponse" nillable="true" type="tns:notificationsResponse0"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Contract" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.DataContract.Contract">
+<xs:complexType name="ArrayOfInformation">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Information" nillable="true" type="tns:Information"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfInformation" nillable="true" type="tns:ArrayOfInformation"/>
+<xs:complexType name="Information">
+<xs:sequence>
+<xs:element minOccurs="0" name="Address" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BillTo" type="xs:decimal"/>
+<xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ClassofTrade" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CommitmentType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ContractName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ContractType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CustomerEffDt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="CustomerExpDt" type="xs:dateTime"/>
+<xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CustomerTypeDsc" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Group" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Number" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Seq" type="xs:decimal"/>
+<xs:element minOccurs="0" name="ShipTo" type="xs:decimal"/>
+<xs:element minOccurs="0" name="State" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Information" nillable="true" type="tns:Information"/>
+</xs:schema>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ItemSearchService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SFDC.Services.Proxy.ItemSearchService">
+<xs:import namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:complexType name="ItemSearchRequestType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="descriptionField" nillable="true" type="xs:string"/>
+<xs:element name="gBUCodesField" nillable="true" type="xs:string"/>
+<xs:element name="identityTokenField" nillable="true" type="xs:string"/>
+<xs:element name="itemCodeField" nillable="true" type="xs:string"/>
+<xs:element name="marketSectionField" nillable="true" type="xs:string"/>
+<xs:element name="salesClassField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ItemSearchRequestType" nillable="true" type="tns:ItemSearchRequestType"/>
+<xs:complexType name="ItemSearchResponseType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="errorCodeField" nillable="true" type="xs:string"/>
+<xs:element name="errorDescriptionField" nillable="true" type="xs:string"/>
+<xs:element name="itemsField" nillable="true" type="tns:ArrayOfItemType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ItemSearchResponseType" nillable="true" type="tns:ItemSearchResponseType"/>
+<xs:complexType name="ArrayOfItemType">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="ItemType" nillable="true" type="tns:ItemType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfItemType" nillable="true" type="tns:ArrayOfItemType"/>
+<xs:complexType name="ItemType">
+<xs:sequence>
+<xs:element name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel"/>
+<xs:element name="activeField" type="xs:boolean"/>
+<xs:element name="descriptionField" nillable="true" type="xs:string"/>
+<xs:element name="discontinuedFlagField" nillable="true" type="xs:string"/>
+<xs:element name="gBUField" nillable="true" type="xs:string"/>
+<xs:element name="itemCodeField" nillable="true" type="xs:string"/>
+<xs:element name="marketSectionField" nillable="true" type="xs:string"/>
+<xs:element name="pRASAvailableField" type="xs:boolean"/>
+<xs:element name="pricingUOMField" nillable="true" type="xs:string"/>
+<xs:element name="primaryUOMField" nillable="true" type="xs:string"/>
+<xs:element name="salesClassField" nillable="true" type="xs:string"/>
+<xs:element name="tierGroupField" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ItemType" nillable="true" type="tns:ItemType"/>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="IProxy_GetEnvironment_InputMessage">
+<wsdl:part name="parameters" element="tns:GetEnvironment"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetEnvironment_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetEnvironmentResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetAppSetting_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAppSetting"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetAppSetting_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAppSettingResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetConnectionString_InputMessage">
+<wsdl:part name="parameters" element="tns:GetConnectionString"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetConnectionString_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetConnectionStringResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetWebServiceURL_InputMessage">
+<wsdl:part name="parameters" element="tns:GetWebServiceURL"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetWebServiceURL_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetWebServiceURLResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetSalesHistory_InputMessage">
+<wsdl:part name="parameters" element="tns:GetSalesHistory"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetSalesHistory_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetSalesHistoryResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetSalesHistoryProductDetails_InputMessage">
+<wsdl:part name="parameters" element="tns:GetSalesHistoryProductDetails"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetSalesHistoryProductDetails_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetSalesHistoryProductDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetDistributorClassOfTrades_InputMessage">
+<wsdl:part name="parameters" element="tns:GetDistributorClassOfTrades"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetDistributorClassOfTrades_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetDistributorClassOfTradesResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetTerritoryManagerTerritory_InputMessage">
+<wsdl:part name="parameters" element="tns:GetTerritoryManagerTerritory"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetTerritoryManagerTerritory_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetTerritoryManagerTerritoryResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_ContractInfo_InputMessage">
+<wsdl:part name="parameters" element="tns:ContractInfo"/>
+</wsdl:message>
+<wsdl:message name="IProxy_ContractInfo_OutputMessage">
+<wsdl:part name="parameters" element="tns:ContractInfoResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_ValidationCheck_InputMessage">
+<wsdl:part name="parameters" element="tns:ValidationCheck"/>
+</wsdl:message>
+<wsdl:message name="IProxy_ValidationCheck_OutputMessage">
+<wsdl:part name="parameters" element="tns:ValidationCheckResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_PartnerQueue_InputMessage">
+<wsdl:part name="parameters" element="tns:PartnerQueue"/>
+</wsdl:message>
+<wsdl:message name="IProxy_PartnerQueue_OutputMessage">
+<wsdl:part name="parameters" element="tns:PartnerQueueResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_RecallDeal_InputMessage">
+<wsdl:part name="parameters" element="tns:RecallDeal"/>
+</wsdl:message>
+<wsdl:message name="IProxy_RecallDeal_OutputMessage">
+<wsdl:part name="parameters" element="tns:RecallDealResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_MultiPrice_InputMessage">
+<wsdl:part name="parameters" element="tns:MultiPrice"/>
+</wsdl:message>
+<wsdl:message name="IProxy_MultiPrice_OutputMessage">
+<wsdl:part name="parameters" element="tns:MultiPriceResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_SinglePrice_InputMessage">
+<wsdl:part name="parameters" element="tns:SinglePrice"/>
+</wsdl:message>
+<wsdl:message name="IProxy_SinglePrice_OutputMessage">
+<wsdl:part name="parameters" element="tns:SinglePriceResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetContractEligibilityByRoot_InputMessage">
+<wsdl:part name="parameters" element="tns:GetContractEligibilityByRoot"/>
+</wsdl:message>
+<wsdl:message name="IProxy_GetContractEligibilityByRoot_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetContractEligibilityByRootResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_notifications_InputMessage">
+<wsdl:part name="parameters" element="tns:notifications"/>
+</wsdl:message>
+<wsdl:message name="IProxy_notifications_OutputMessage">
+<wsdl:part name="parameters" element="tns:notificationsResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_delay_InputMessage">
+<wsdl:part name="parameters" element="tns:delay"/>
+</wsdl:message>
+<wsdl:message name="IProxy_delay_OutputMessage">
+<wsdl:part name="parameters" element="tns:delayResponse"/>
+</wsdl:message>
+<wsdl:message name="IProxy_ItemSearch_InputMessage">
+<wsdl:part name="parameters" element="tns:ItemSearch"/>
+</wsdl:message>
+<wsdl:message name="IProxy_ItemSearch_OutputMessage">
+<wsdl:part name="parameters" element="tns:ItemSearchResponse"/>
+</wsdl:message>
+<wsdl:portType name="IProxy">
+<wsdl:operation name="GetEnvironment">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetEnvironment" message="tns:IProxy_GetEnvironment_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetEnvironmentResponse" message="tns:IProxy_GetEnvironment_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetAppSetting">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetAppSetting" message="tns:IProxy_GetAppSetting_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetAppSettingResponse" message="tns:IProxy_GetAppSetting_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetConnectionString">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetConnectionString" message="tns:IProxy_GetConnectionString_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetConnectionStringResponse" message="tns:IProxy_GetConnectionString_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetWebServiceURL">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetWebServiceURL" message="tns:IProxy_GetWebServiceURL_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetWebServiceURLResponse" message="tns:IProxy_GetWebServiceURL_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetSalesHistory">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetSalesHistory" message="tns:IProxy_GetSalesHistory_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetSalesHistoryResponse" message="tns:IProxy_GetSalesHistory_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetSalesHistoryProductDetails">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetSalesHistoryProductDetails" message="tns:IProxy_GetSalesHistoryProductDetails_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetSalesHistoryProductDetailsResponse" message="tns:IProxy_GetSalesHistoryProductDetails_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetDistributorClassOfTrades">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetDistributorClassOfTrades" message="tns:IProxy_GetDistributorClassOfTrades_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetDistributorClassOfTradesResponse" message="tns:IProxy_GetDistributorClassOfTrades_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetTerritoryManagerTerritory">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetTerritoryManagerTerritory" message="tns:IProxy_GetTerritoryManagerTerritory_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetTerritoryManagerTerritoryResponse" message="tns:IProxy_GetTerritoryManagerTerritory_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="ContractInfo">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/ContractInfo" message="tns:IProxy_ContractInfo_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/ContractInfoResponse" message="tns:IProxy_ContractInfo_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="ValidationCheck">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/ValidationCheck" message="tns:IProxy_ValidationCheck_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/ValidationCheckResponse" message="tns:IProxy_ValidationCheck_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="PartnerQueue">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/PartnerQueue" message="tns:IProxy_PartnerQueue_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/PartnerQueueResponse" message="tns:IProxy_PartnerQueue_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="RecallDeal">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/RecallDeal" message="tns:IProxy_RecallDeal_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/RecallDealResponse" message="tns:IProxy_RecallDeal_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="MultiPrice">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/MultiPrice" message="tns:IProxy_MultiPrice_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/MultiPriceResponse" message="tns:IProxy_MultiPrice_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="SinglePrice">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/SinglePrice" message="tns:IProxy_SinglePrice_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/SinglePriceResponse" message="tns:IProxy_SinglePrice_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetContractEligibilityByRoot">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetContractEligibilityByRoot" message="tns:IProxy_GetContractEligibilityByRoot_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetContractEligibilityByRootResponse" message="tns:IProxy_GetContractEligibilityByRoot_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="notifications">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/notifications" message="tns:IProxy_notifications_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/notificationsResponse" message="tns:IProxy_notifications_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="delay">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/delay" message="tns:IProxy_delay_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/delayResponse" message="tns:IProxy_delay_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="ItemSearch">
+<wsdl:input wsaw:Action="http://tempuri.org/IProxy/ItemSearch" message="tns:IProxy_ItemSearch_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/IProxy/ItemSearchResponse" message="tns:IProxy_ItemSearch_OutputMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_IProxy" type="tns:IProxy">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetEnvironment">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetEnvironment" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetAppSetting">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetAppSetting" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetConnectionString">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetConnectionString" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetWebServiceURL">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetWebServiceURL" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetSalesHistory">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetSalesHistory" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetSalesHistoryProductDetails">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetSalesHistoryProductDetails" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetDistributorClassOfTrades">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetDistributorClassOfTrades" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetTerritoryManagerTerritory">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetTerritoryManagerTerritory" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ContractInfo">
+<soap:operation soapAction="http://tempuri.org/IProxy/ContractInfo" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ValidationCheck">
+<soap:operation soapAction="http://tempuri.org/IProxy/ValidationCheck" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PartnerQueue">
+<soap:operation soapAction="http://tempuri.org/IProxy/PartnerQueue" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="RecallDeal">
+<soap:operation soapAction="http://tempuri.org/IProxy/RecallDeal" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="MultiPrice">
+<soap:operation soapAction="http://tempuri.org/IProxy/MultiPrice" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SinglePrice">
+<soap:operation soapAction="http://tempuri.org/IProxy/SinglePrice" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetContractEligibilityByRoot">
+<soap:operation soapAction="http://tempuri.org/IProxy/GetContractEligibilityByRoot" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="notifications">
+<soap:operation soapAction="http://tempuri.org/IProxy/notifications" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="delay">
+<soap:operation soapAction="http://tempuri.org/IProxy/delay" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ItemSearch">
+<soap:operation soapAction="http://tempuri.org/IProxy/ItemSearch" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="Proxy">
+<wsdl:port name="BasicHttpBinding_IProxy" binding="tns:BasicHttpBinding_IProxy">
+<soap:address location="http://sfdcservices-dev.covidien.com/SFDC.Services.Proxy.Proxy.svc"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

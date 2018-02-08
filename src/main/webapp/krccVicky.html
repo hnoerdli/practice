@@ -1,0 +1,40 @@
+<html>
+   <!--
+      #t=10,20
+      This will play from 10 to 20 seconds and stop
+      http://mod.krcc.org/Vicky/5720154990/2018-01-09-MusicMix.mp3#t=10,20
+     
+      document.getElementById('videoObj').currentTime;
+      document.getElementById('videoObj').duration;
+
+      https://www.w3schools.com/tags/ref_av_dom.asp
+   -->
+   <head>
+      <script>
+           function loadFile() {
+              var reqDate = window.location.search;
+              var mediaUrl = "http://mod.krcc.org/Vicky/5720154990/" + reqDate.split('d=')[1] + "-MusicMix.mp3";
+              var mySourceObj = document.createElement("source");
+              mySourceObj.src = mediaUrl;
+              var myVideoObj = document.getElementById('videoObj');
+              myVideoObj.appendChild(mySourceObj);
+           }                    
+ 
+           function setDate() {
+              var datePicker = document.getElementById('broadcastDate');
+              console.log(datePicker);
+              var dateDiv = document.getElementById('datePicked');
+              dateDiv.innerHTML = datePicker.value; 
+
+           }
+      </script>
+   </head>
+   <body onload="loadFile()">
+     <div style='vertical-align: top; width: 1400px; height: 55px;'>
+         <video id='videoObj' controls="" autoplay name="media" style="width: 1400px; height: 55px;"/>
+     </div>
+
+ <input type="date" id="broadcastDate" oninput="setDate()">
+ <div id='datePicked'/>
+</body>
+</html>
